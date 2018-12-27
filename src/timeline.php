@@ -84,13 +84,14 @@
 </nav>
 
 
+
 <main role="main" class="container">
 
 
 
     <div class='well col-md-8 col-xs-offset-2'>
         <h2>New user</h2>
-        <form id='register-form' class='form form-horizontal' method='POST'  action="./?p=/register">
+        <form id='register-form' class='form form-horizontal' method='POST'  action="css?p=/register">
             <div class='form-group'>
                 <label class='control-label col-xs-4' for="title">Titulek:</label>
                 <div  class=' col-xs-8'>
