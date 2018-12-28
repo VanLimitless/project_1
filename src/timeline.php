@@ -89,30 +89,7 @@
 
 
 
-    <div class='well col-md-8 col-xs-offset-2'>
-        <h2>New user</h2>
-        <form id='register-form' class='form form-horizontal' method='POST'  action="css?p=/register">
-            <div class='form-group'>
-                <label class='control-label col-xs-4' for="title">Titulek:</label>
-                <div  class=' col-xs-8'>
-                    <input id='title' name='title' class='form-control' type="text"
-                           required  >
-                </div>
-            </div>
-            <div class='form-group'>
-                <label class='control-label col-xs-4' for="post">Příspěvek:</label>
-                <div  class=' col-xs-8'>
-                    <textarea id='post' name='post' class='form-control' required rows='4' cols="50">
-
-                    </textarea>
-                </div>
-            </div>
-
-            <div class='col-xs-offset-3 col-xs-6'>
-                <input type='submit' name='register' class='form-control btn btn-primary' value="Register">
-            </div>
-        </form>
-    </div>
+    
 
 
 
