@@ -89,8 +89,41 @@
 
 
 
-    
 
+    include 'header.php';
+    include "loginform.html";
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    if (!empty($_POST['mail'])&&!empty($_POST['heslo'])){
+    include 'connection.php';
+    try {
+    $dot=$conn->prepare("SELECT * FROM uzivatel WHERE email=:mail;");
+    $dot->bindParam('mail',$_POST['mail']);
+    $dot->execute();
+    $result = $dot->fetchAll(PDO::FETCH_ASSOC);
+    if ($result!=null) {
+    $heslo = hash('sha256',$_POST['heslo']);
+    if ($result[0]["heslo"] == $heslo) {
+    $_SESSION['prihlasen'] = $result[0]['email'];
+    echo "prihlaseno";
+    header("Location: index.php");
+    } else {
+    echo "neprihlaseno, heslo nebylo zadano spravne";
+    }
+    } else {
+    echo "neprihlaseno, neexistujici uzivatel";
+    }
+    } catch (Exception $e) {
+    echo "chyba dotazu";
+    }
+    }
+    } else {
+    //kdyby nahodou
+    }
+
+
+
+
+    include 'footer.php';
 
 
 </main><!-- /.container -->

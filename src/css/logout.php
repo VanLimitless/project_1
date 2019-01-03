@@ -77,7 +77,21 @@
 
 <main role="main" class="container">
 
-
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Van Limitless
+ * Date: 27.05.2018
+ * Time: 19:17
+ */
+include "header.php";
+$_SESSION['prihlasen']=null;
+session_destroy();
+header('Location: index.php');
+?>
+    Uspesne odhlaseno
+<?php
+include 'footer.php';
 
 
 
