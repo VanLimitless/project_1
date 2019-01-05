@@ -3,5 +3,5 @@
 
 $db_host = 'localhost';
 $db_user = 'root';
-$db_password = '';
-$db_name = 'Music_Land';
+$db_password = 'root';
+$db_name = 'cms';

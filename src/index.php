@@ -1,6 +1,12 @@
 <?php
+echo time();
 include_once ('includes/connection.php');
-include_once ('includes/article.php');
+include_once('includes/article.php');
+
+$article = new  Article();
+$articles = $article->fetch_all();
+
+print_r($articles);
 
 ?>
 
@@ -96,10 +102,20 @@ include_once ('includes/article.php');
         <a href="index.php" id="logo"> Vyber </a>
 
     <ol>
+        <?php foreach ($articles as $article) {?>
         <li>
-            <a href="article.php?id=1"> Vyber asi </a>
-            - <small>publikováno 10.8.2018</small>
+            <a href="article.php?id=<?php echo $article ['article_id'];?>"> Vyber asi
+                <?php echo $article['article_title'];?>
+            </a>
+
+            - <small>
+
+               posted  <?php echo date('l jS',$article['article_timestamp']);?>
+
+            </small>
         </li>
+
+        <?php }?>
 
     </ol>
 
