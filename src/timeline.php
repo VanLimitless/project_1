@@ -1,46 +1,101 @@
-
 <?php
-include 'header.php';
-include 'includes/connection.php';
-    $sql=$conn->prepare("SELECT * FROM posts ORDER BY id DESC;");
+include 'header.php'; ?>
+    <div class="starter-template">
+    <h1>Music Land</h1>
+
+
+<form method="post" action="#">
+
+    <select name="stav" id="select">
+        <option value="" >------- Seřazení článku -------</option>
+        <option value="DESC" >Seřadit podle nejnovějšího příspěvku</option>
+        <option value="ASC" >Seřadit podle nejstaršího příspěvku</option>
+    </select>
+    <input id='submit' type="submit" name="tlacitko" value="Submit" style="display: none;">
+
+
+</form>
+    <script>
+
+        $(document).ready(function() {
+            $('#select').on('change', function() {
+                $('#submit').click();
+
+            });
+        });
+    </script>
+
+
+
+    </div>
+
+<br>
+
+    <div class="card-body">
+
+<?php include 'includes/connection.php';
+
+if(isset($_POST['tlacitko'])) {
+    $input = $_POST['stav'];
+
+
+    $sql = $conn->prepare("SELECT * FROM posts ORDER BY id $input");
+
+    if ($input=="DESC"){
+        echo "Seřazeno od nejnovějšího příspěvku...";
+    }
+    else
+    {
+        echo "Seřazeno od nejstaršího příspěvku...";
+    }
+
+}
+else
+{$sql = $conn->prepare("SELECT * FROM posts ORDER BY id DESC");}
+
+
     $sql->execute();
     $result = $sql->fetchAll(PDO::FETCH_ASSOC);
  foreach ($result as $value){
 
+
 ?>
-<main role="main" class="container">
-<div class="timeline">
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">
-                <?php echo $value['title'];?>
-            </h5>
-            <h6 class="card-subtitle text-muted">
-                <?php echo $value['autor'];
-                if (isset($_SESSION["prihlasen"])){
-                    if ($_SESSION["prihlasen"]==$value["autor"]){
-                        echo " <a href='edituj.php?id={$value["id"]}'>Editovat prispevek</a>";
-                        echo " <a href='smaz.php?id={$value["id"]}'>Smazat prispevek</a>";
-                    }
-                }?>
-            </h6>
-        </div>
-        <div class="card-body">
-            <p class="card-text">
-                <?php echo $value['body'];?>
-            </p>
-        </div>
-        <div class="card-footer text-muted">
-            <?php echo $value['date'];?>
-        </div>
-    </div>
-<?php
+
+
+
+
+
+     <div class="card mb-3">
+         <div class="card-body">
+             <h5 class="card-title">
+                 <?php echo $value['title'];?>
+             </h5>
+             <h6 class="card-subtitle text-muted">
+                 <?php echo $value['autor'];
+                 if (isset($_SESSION["prihlasen"])){
+                     if ($_SESSION["prihlasen"]==$value["autor"]){
+                         echo " <a href='edituj.php?id={$value["id"]}'>Editovat prispevek</a>";
+                         echo " <a href='smaz.php?id={$value["id"]}'>Smazat prispevek</a>";
+                     }
+                 }?>
+             </h6>
+         </div>
+         <div class="card-body">
+             <p class="card-text">
+                 <?php echo $value['body'];?>
+             </p>
+         </div>
+         <div class="card-footer text-muted">
+             <?php echo $value['date'];?>
+         </div>
+     </div>
+
+
+     <?php
  }
 ?>
-
-
-
+    </div>
 
 <?php
-    include 'footer.php';
+include 'footer.php';
 ?>

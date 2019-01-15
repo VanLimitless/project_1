@@ -7,7 +7,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname="cms";
+$dbname="Music_Land";
 
 
 

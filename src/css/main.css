@@ -11,3 +11,20 @@ small{
     font-style: italic;
 
 }
+
+h1, #footer {
+    font-family: fantasy;
+    color: #007bff;
+
+    text-shadow: -1px 0 #050505, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
+}
+
+h4, #footer {
+    font-family: fantasy;
+    color: #007bff;
+
+    text-shadow: -1px 0 #007bff, 0 1px #007bff, 1px 0 #007bff, 0 -1px #007bff;}
+body {
+
+    background-image: url('');
+}

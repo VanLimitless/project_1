@@ -2,6 +2,6 @@
 
 
 $db_host = 'localhost';
-$db_user = 'root';
-$db_password = 'root';
-$db_name = 'cms';
+$db_user = 'haladama';
+$db_password = 'Sankasro21*';
+$db_name = 'haladama';
