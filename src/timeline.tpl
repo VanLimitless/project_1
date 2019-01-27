@@ -1,44 +1,26 @@
 <div class="starter-template">
     <h1>Music Land</h1>
-
-
 <form method="post" action="#">
-
     <select name="stav" id="select">
         <option value="" >------- Seřazení článku -------</option>
         <option value="DESC" >Seřadit podle nejnovějšího příspěvku</option>
         <option value="ASC" >Seřadit podle nejstaršího příspěvku</option>
     </select>
     <input id='submit' type="submit" name="tlacitko" value="Submit" style="display: none;">
-
-
 </form>
     <script>
-
         $(document).ready(function() {
             $('#select').on('change', function() {
                 $('#submit').click();
-
             });
         });
     </script>
-
-
-
-    </div>
-
+ </div>
 <br>
-
     <div class="card-body">
-
 <?php
  foreach ($result as $value){
 ?>
-
-
-
-
-
      <div class="card mb-3">
          <div class="card-body">
              <h5 class="card-title">
@@ -63,8 +45,6 @@
              <?php echo $value['date'];?>
          </div>
      </div>
-
-
      <?php
  }
 ?>
