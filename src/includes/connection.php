@@ -1,8 +1,4 @@
 <?php
-//$servername = "localhost";
-//$username = "root";
-//$password = "";
-//$dbname="haladama";
 
 $servername = "localhost";
 $username = "root";
