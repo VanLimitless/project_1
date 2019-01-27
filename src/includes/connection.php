@@ -1,13 +1,9 @@
 <?php
-//$servername = "localhost";
-//$username = "root";
-//$password = "";
-//$dbname="haladama";
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname="cms";
+$username = "haladama";
+$password = "Sankasro21*";
+$dbname="Music_Land";
 
 
 

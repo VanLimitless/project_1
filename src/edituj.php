@@ -1,6 +1,6 @@
 <?php
 include 'load.php';
-$stranka='timeline';
+$stranka='edituj';
 $model = new Model();
 $controller= new Controller($model);
 $view = new View($stranka,$model,$controller);
