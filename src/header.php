@@ -72,10 +72,10 @@
         <?php
         if (isset($_SESSION['prihlasen'])):
             ?>
-        <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-secondary my-2 my-sm-0"><?=$_SESSION['prihlasen']?></button>
-            <a href="logout.php" class="btn btn-secondary my-2 my-sm-0" type="submit">Log out</a>
-        </form>
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-secondary my-2 my-sm-0"><?=$_SESSION['prihlasen']?></button>
+                <a href="logout.php" class="btn btn-secondary my-2 my-sm-0" type="submit">Log out</a>
+            </form>
         <?php
         else:
             ?>
@@ -89,71 +89,3 @@
 
     </div>
 </nav>
-<<<<<<< HEAD:src/nic.php:src/nic.php
-
-
-
-<main role="main" class="container">
-
-
-
-
-
-</main><!-- /.container -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script></body>
-</html>
-
-
-na yacatku indexu
-<?php
-echo time();
-include_once ('includes/connection.php');
-include_once('includes/article.php');
-
-$article = new  Article();
-$articles = $article->fetch_all();
-
-print_r($articles);
-
-?>
-
-
-v indexu
-
-<div class="container">
-
-    <a href="index.php" id="logo"> Vyber </a>
-
-    <ol>
-        <?php foreach ($articles as $article) {?>
-            <li>
-                <a href="article.php?id=<?php echo $article ['article_id'];?>"> Vyber asi
-                    <?php echo $article['article_title'];?>
-                </a>
-
-                - <small>
-
-                    posted  <?php echo date('l jS',$article['article_timestamp']);?>
-
-                </small>
-            </li>
-
-        <?php }?>
-
-    </ol>
-
-</div>
-
-
-
-puvodni loginform
-
-<h3>Přihlášení</h3><br>
-<form action="login.php" method="post">
-    <input type="email" name="mail" placeholder="zadejte email">
-    <input type="password" name="heslo" placeholder="zadejte heslo">
-    <button> Odeslat </button>
-</form>
-=======
->>>>>>> origin/master:src/header.php:src/header.php
